@@ -9,10 +9,10 @@ import java.util.concurrent.CountDownLatch;
 public class CountdownLatchDemo {
     public static void main(String[] args) throws InterruptedException {
         int count = 3;
-        CountDownLatch countDownLatch = new CountDownLatch(count);
+        final CountDownLatch countDownLatch = new CountDownLatch(count);
         for (int i = 0; i < 3; i++) {
             new Thread(new Runnable() {
-                @Override
+//                @Override
                 public void run() {
                     System.out.println(Thread.currentThread().getName() + "开始执行");
                     try {
